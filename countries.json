@@ -1,0 +1,11 @@
+{
+    "China": ["Russia", "Mongolia", "India", "North Korea"],
+    "Russia": ["China", "Mongolia", "Finland"],
+    "South Korea": ["North Korea"],
+    "North Korea": ["South Korea", "China"],
+    "Mongolia": ["Russia", "China"],
+    "India": ["China", "Nepal"],
+    "Nepal": ["India", "China"],
+    "Finland": ["Russia"]
+  }
+  
