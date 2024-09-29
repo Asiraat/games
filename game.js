@@ -120,8 +120,28 @@ document.getElementById('answer-input').addEventListener('keypress', (e) => {
     }
 });
 
-// 入力補助の動作を調整
+//ここから
 const answerInput = document.getElementById('answer-input');
+const submitButton = document.getElementById('submit-answer');
+
+function submitAnswer() {
+    const answer = answerInput.value.trim();
+    if (answer) {
+        playerTurn(answer);
+        answerInput.value = '';
+    }
+}
+
+submitButton.addEventListener('click', submitAnswer);
+
+answerInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault(); // フォームの自動送信を防ぐ
+        submitAnswer();
+    }
+});
+
+// 入力補助の動作を調整
 answerInput.addEventListener('input', function() {
     if (this.value.length > 0) {
         this.setAttribute('list', 'country-list');
@@ -133,6 +153,7 @@ answerInput.addEventListener('input', function() {
 answerInput.addEventListener('focus', function() {
     this.removeAttribute('list');
 });
+//ここまで
 
 // ヘルプボタンとモーダルの機能
 const modal = document.getElementById('modal');
