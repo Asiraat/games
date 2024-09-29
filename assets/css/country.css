@@ -10,132 +10,130 @@
     font-weight: normal;
     font-style: normal;
   }
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        #game-container {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 80%;
-            max-width: 500px;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        #game-inner {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            padding: 20px;
-        }
-        #title-container {
-            background-color: #ff7f7e;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 20px 10px;
-            margin: -20px -20px 10px;
-        }
-        #chat-container {
-            flex-grow: 1;
-            overflow-y: auto;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-            display: flex;
-            flex-direction: column;
-        }
-        .message {
-            margin-bottom: 10px;
-            padding: 5px;
-            border-radius: 5px;
-        }
-        .player {
-            background-color: #f6d893;
-        }
-        .computer {
-            background-color: #f0f0f0;
-        }
-        .system {
-            color: #666;
-            font-style: italic;
-        }
-        #input-container {
-            display: flex;
-        }
-        #answer-input {
-            flex-grow: 1;
-            margin-right: 10px;
-        }
-        .play-again {
-            background-color: #f6d893;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px auto;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        #help-button {
-            background-color: #f6d893;
-            border: none;
-            color: #333;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            font-size: 16px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        #modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        #modal.show {
-            opacity: 1;
-        }
-        #modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 10px;
-        }
-        #close-button {
-            background-color: #f6d893;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: block;
-            font-size: 16px;
-            margin: 20px auto 0;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-    
+body {
+    font-family: mameron3.5, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+#game-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 500px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+#game-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#title-container {
+    font-family: keifont, sans-serif;
+    background-color: #ff7f7e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 10px;
+}
+#chat-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.message {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.player {
+    background-color: #f6d893;
+}
+.computer {
+    background-color: #f0f0f0;
+}
+.system {
+    color: #666;
+    font-style: italic;
+    font-family: '游明朝','YuMincho','Hiragino Mincho Pro' serif;
+}
+#input-container {
+    display: flex;
+    padding: 10px 20px 20px;
+}
+#answer-input {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+.play-again {
+    background-color: #ff7f7e;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px auto;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#help-button {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: #333;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+#modal.show {
+    opacity: 1;
+}
+#modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+#close-button {
+    background-color: #f6d893;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 20px auto 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
