@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://Asiraat.github.io/games/assets/css/country.css">
+    <link rel="icon" href="https://Asiraat.github.io/games/assets/image/favicon.ico">
+    <title>国境ゲーム</title>
+</head>
+<body>
+    <div id="game-container">
+        <div id="game-inner">
+            <div id="title-container">
+                <h1>国境ゲーム</h1>
+                <button id="help-button">?</button>
+            </div>
+            <div id="chat-container"></div>
+            <div id="input-container">
+                <input type="text" id="answer-input" placeholder="隣接国を入力" list="country-list" autocomplete="off">
+                <datalist id="country-list"></datalist>
+                <button id="submit-answer">回答</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal">
+        <div id="modal-content">
+            <h2>ゲームの説明</h2>
+            <p>1. プレイヤーとコンピュータは交互に隣接する国の名前を言います</p>
+            <p>2. これを繰り返し、既に出た国名や隣接していない国名を言うとミスになります</p>
+            <p>3. 2回連続でミスするとゲームオーバーです</p>
+            <p>4. コンピュータが言える国がなくなったらプレイヤーの勝利です</p>
+            <p>5. 飛び地も隣接しているとみなされます</p>
+            <p>6. ただし、イギリスとフランスに関しては本国に接する国のみが対象となります</p>
+            <p>7. 未承認国家の多くは対象外ですが、西サハラのみ例外としてリストに含まれます</p>
+            <button id="close-button">とじる</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
