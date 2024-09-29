@@ -121,12 +121,17 @@ document.getElementById('answer-input').addEventListener('keypress', (e) => {
 });
 
 // 入力補助の動作を調整
-document.getElementById('answer-input').addEventListener('input', function() {
+const answerInput = document.getElementById('answer-input');
+answerInput.addEventListener('input', function() {
     if (this.value.length > 0) {
         this.setAttribute('list', 'country-list');
     } else {
         this.removeAttribute('list');
     }
+});
+
+answerInput.addEventListener('focus', function() {
+    this.removeAttribute('list');
 });
 
 // ヘルプボタンとモーダルの機能
