@@ -58,9 +58,11 @@ body {
     border-radius: 5px;
 }
 .player {
+    font-family: mameron3.5, sans-serif;
     background-color: #f6d893;
 }
 .computer {
+    font-family: mameron3.5, sans-serif;
     background-color: #f0f0f0;
 }
 .system {
@@ -77,6 +79,7 @@ body {
     margin-right: 10px;
 }
 .play-again {
+    font-family: mameron3.5, sans-serif;
     background-color: #ff7f7e;
     border: none;
     padding: 10px 20px;
@@ -117,6 +120,7 @@ body {
     opacity: 1;
 }
 #modal-content {
+    font-family: mameron3.5, sans-serif;
     background-color: #fefefe;
     margin: 5% auto;
     padding: 20px;
@@ -126,6 +130,7 @@ body {
     border-radius: 10px;
 }
 #close-button {
+    font-family: mameron3.5, sans-serif;
     background-color: #f6d893;
     border: none;
     padding: 10px 20px;
