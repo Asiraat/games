@@ -11,6 +11,7 @@ fetch('countries.json')
         countries = data;
         populateCountryList();
         startNewGame();
+        setupEventListeners(); // 新しい関数を呼び出し
     });
 
 function populateCountryList() {
@@ -105,55 +106,41 @@ function addPlayAgainButton() {
     chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
-document.getElementById('submit-answer').addEventListener('click', () => {
+function setupEventListeners() {
+    const answerInput = document.getElementById('answer-input');
+    const submitButton = document.getElementById('submit-answer');
+
+    // フォーム送信イベントリスナーを追加
+    document.getElementById('input-container').addEventListener('submit', function(e) {
+        e.preventDefault(); // デフォルトの送信動作を防止
+        submitAnswer();
+    });
+
+    // ボタンクリックイベントリスナーを追加
+    submitButton.addEventListener('click', submitAnswer);
+
+    // 入力補助の動作を調整
+    answerInput.addEventListener('input', function() {
+        if (this.value.length > 0) {
+            this.setAttribute('list', 'country-list');
+        } else {
+            this.removeAttribute('list');
+        }
+    });
+
+    answerInput.addEventListener('focus', function() {
+        this.removeAttribute('list');
+    });
+}
+
+function submitAnswer() {
     const answerInput = document.getElementById('answer-input');
     const answer = answerInput.value.trim();
     if (answer) {
         playerTurn(answer);
         answerInput.value = '';
     }
-});
-
-document.getElementById('answer-input').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        document.getElementById('submit-answer').click();
-    }
-});
-
-//ここから
-const answerInput = document.getElementById('answer-input');
-const submitButton = document.getElementById('submit-answer');
-
-function submitAnswer() {
-    const answer = answerInput.value.trim();
-    if (answer) {
-        playerTurn(answer);
-        answerInput.value = '';
-    }
 }
-
-submitButton.addEventListener('click', submitAnswer);
-
-answerInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        e.preventDefault(); // フォームの自動送信を防ぐ
-        submitAnswer();
-    }
-});
-
-// 入力補助の動作を調整
-answerInput.addEventListener('input', function() {
-    if (this.value.length > 0) {
-        this.setAttribute('list', 'country-list');
-    } else {
-        this.removeAttribute('list');
-    }
-});
-
-answerInput.addEventListener('focus', function() {
-    this.removeAttribute('list');
-});
-//ここまで
 
 // ヘルプボタンとモーダルの機能
 const modal = document.getElementById('modal');
