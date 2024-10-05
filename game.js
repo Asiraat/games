@@ -109,16 +109,13 @@ function addPlayAgainButton() {
 function setupEventListeners() {
     const answerInput = document.getElementById('answer-input');
     const submitButton = document.getElementById('submit-answer');
-
     // フォーム送信イベントリスナーを追加
     document.getElementById('input-container').addEventListener('submit', function(e) {
         e.preventDefault(); // デフォルトの送信動作を防止
         submitAnswer();
     });
-
     // ボタンクリックイベントリスナーを追加
     submitButton.addEventListener('click', submitAnswer);
-
     // 入力補助の動作を調整
     answerInput.addEventListener('input', function() {
         if (this.value.length > 0) {
@@ -127,9 +124,16 @@ function setupEventListeners() {
             this.removeAttribute('list');
         }
     });
-
+    // 入力フィールドがフォーカスを失ったときの処理を追加
+    answerInput.addEventListener('blur', function() {
+        if (this.value.length === 0) {
+            this.removeAttribute('list');
+        }
+    });
     answerInput.addEventListener('focus', function() {
-        this.removeAttribute('list');
+        if (this.value.length === 0) {
+            this.removeAttribute('list');
+        }
     });
 }
 
@@ -138,7 +142,8 @@ function submitAnswer() {
     const answer = answerInput.value.trim();
     if (answer) {
         playerTurn(answer);
-        answerInput.value = '';
+        answerInput.value = ''; // 送信後にクリア
+        answerInput.removeAttribute('list'); // datalist属性を消去
     }
 }
 
