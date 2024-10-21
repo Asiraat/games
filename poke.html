@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta id="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="poke.css">
+  <title></title>
+</head>
+<body>
+  <div class="container">
+    
+    
+    <div class="title">ポケモンばとる！</div>
+    
+    
+    <div class="tex">使用するポケモンを指定</div>
+    <div class="input-container">
+      <input id="pokeinput" type="text" placeholder="初代ポケモンの中からカタカナで入力">
+      <button id="poke-confirm" class="confirm-button">決定</button>
+    </div>
+    
+    
+    <div id="after-pokechoice" class="sankaku"></div>
+    
+    
+    <div class="tex">性格補正を選択</div>
+    <div class="seikaku-container">
+      <div class="seikaku">
+        <p>＋補正を選択</p>
+        <select id="selectPlus">
+          <option value="A">こうげき</option>
+          <option value="B">ぼうぎょ</option>
+          <option value="C">とくこう</option>
+          <option value="D">とくぼう</option>
+          <option value="S">すばやさ</option>
+        </select>
+      </div>
+      <div class="seikaku">
+        <p>－補正を選択</p>
+        <select id="selectMainasu">
+          <option value="A">こうげき</option>
+          <option value="B">ぼうぎょ</option>
+          <option value="C">とくこう</option>
+          <option value="D">とくぼう</option>
+          <option value="S">すばやさ</option>
+        </select>
+      </div>
+    </div>
+    
+    
+    <div id="after-seikaku" class="sankaku"></div>
+    
+    
+    <div class="tex">努力値を配分</div>
+    <div class="number-container">
+      <div class="num-row">
+      <span>HP</span><input type="number" id="hNum">
+      </div>
+      <div class="num-row">
+      <span>こうげき</span><input type="number" id="aNum">
+      </div>
+      <div class="num-row">
+      <span>ぼうぎょ</span><input type="number" id="bNum">
+      </div>
+      <div class="num-row">
+      <span>とくこう</span><input type="number" id="cNum">
+      </div>
+      <div class="num-row">
+      <span>とくぼう</span><input type="number" id="dNum">
+      </div>
+      <div class="num-row">
+      <span>すばやさ</span><input type="number" id="sNum">
+      </div>
+    </div>
+    <div class="chuu">
+      <li>0以上252以下の数字を入力</li>
+      <li>未入力は0として扱われる</li>
+      <li>合計は510以下</li>
+    </div>
+    <button id="number-button" class="confirm-button">決定</button>
+    
+    
+    <div id="after-number" class="sankaku"></div>
+    
+    
+    <button id="confirm">確定</button>
+    
+    
+    <div id="after-waza" class="sankaku"></div>
+    
+    
+    <div class="tex">あなたのポケモン</div>
+      <div class="pokepic">
+        <img src="" alt="" loading="lazy" id="imgPokemon">
+      </div>
+    <div class="text1">
+      <p>Lv50での実数値</p>
+    </div>
+    <div id="jissuuti">
+    </div>
+    
+    
+    
+    
+  </div>  
+  <script src="poke.js"></script>
+</body>
+</html>
